@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_file
+from flask import Flask, jsonify, request, send_file, render_template
 from respository.database import db
 from models.payments import Payment
 from datetime import datetime, timedelta
@@ -48,7 +48,7 @@ def  pix_confimation():
 
 @app.route('/payments/pix/<int:payment_id>', methods=['GET'])
 def payment_pix_page(payment_id):
-    return 'pagamento pix'
+    return render_template('payment.html')
 
 
 
